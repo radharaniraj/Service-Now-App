@@ -1,8 +1,8 @@
 import React from 'react';
-import Picker from './src/components/Picker'
+import ServiceNowForm from './src/components/ServiceNowForm'
 const App = () => {
   return (
-    <Picker />
+    <ServiceNowForm />
   );
 };
 export default App;

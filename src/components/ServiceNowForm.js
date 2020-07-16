@@ -1,9 +1,9 @@
-
+require('dotenv').config()
 import React, { Component } from 'react'
 let base64 = require('base-64')
 import { View, Text, TouchableOpacity, TextInput, StyleSheet, Alert } from 'react-native'
 
-class Inputs extends Component {
+class ServiseNowForm extends Component {
    state = {
       Description: ''
    }
@@ -12,9 +12,9 @@ class Inputs extends Component {
    }
    login = (Description) => {
        
-    let url = 'https://dev64765.service-now.com/api/now/table/x_514301_shubhamap_shubhamtable';
-    let username = 'admin';
-    let password = 'Shubham123';
+    let url = 'https://'+process.env.INSTANCE+'.service-now.com/api/now/table/x_514301_shubhamap_shubhamtable';
+    let username = process.env.USERNAME;
+    let password = process.env.PASSWORD;
   
     let headers = new Headers();
     let data = {
@@ -60,7 +60,7 @@ class Inputs extends Component {
       )
    }
 }
-export default Inputs
+export default ServiseNowForm
 
 const styles = StyleSheet.create({
    container: {
